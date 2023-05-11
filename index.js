@@ -74,12 +74,20 @@ function handleFetchedData(newData) {
 }
 
 // Call the fetchData function once
-fetchData(Last24HoursURL)
+function getAndFetchData(){
+  fetchData(Last24HoursURL)
   .then(handleFetchedData)
   .catch(error => {
     console.error('Error:', error);
   });
-
+}
+  
+  // Initial fetch
+  getAndFetchData();
+  
+  // Fetch every 5 seconds
+  setInterval(getAndFetchData, 10000);
+  
 
 
 

@@ -50,7 +50,7 @@ function isAlertDateTimeInRange(alertDate) {
   const currentDateTime = new Date(`${currentDateString} ${currentTimeString}`);
 
   const diffInMinutes = Math.abs(alertDateTime - currentDateTime) / (1000 * 60);
-  return diffInMinutes <= 150;
+  return diffInMinutes <= 6;
 }
 
 function fetchData(URL) {

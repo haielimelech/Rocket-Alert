@@ -4,7 +4,7 @@ script.src = chrome.extension.getURL('axios.min.js');
 (document.head || document.documentElement).appendChild(script);
 
 chrome.alarms.onAlarm.addListener(() => {
-  const URL = 'https://www.oref.org.il//Shared/Ajax/GetAlarmsHistory.aspx?lang=en&mode=1'; // Replace with your API endpoint
+  const URL = process.env.URL; // Replace with your API endpoint
 
   fetchData(URL)
   .then(result => {
@@ -50,7 +50,7 @@ function isAlertDateTimeInRange(alertDate) {
   const currentDateTime = new Date(`${currentDateString} ${currentTimeString}`);
 
   const diffInMinutes = Math.abs(alertDateTime - currentDateTime) / (1000 * 60);
-  return diffInMinutes <= 6;
+  return diffInMinutes <= 5;
 }
 
 function fetchData(URL) {

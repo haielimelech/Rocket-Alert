@@ -9,8 +9,8 @@
     "permissions": [
       "notifications",
       "storage",
-      "alarms",
-      "https://www.oref.org.il//Shared/Ajax/GetAlarmsHistory.aspx?lang=en&mode=1"
+      "alarms"
+    
     ],
     "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net; object-src 'self'"
 ,

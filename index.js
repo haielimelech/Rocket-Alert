@@ -48,7 +48,7 @@ function formatDate(dateString) {
   return `${formattedDate} - ${formattedTime}`;
 }
 
-const Last24HoursURL = 'https://www.oref.org.il//Shared/Ajax/GetAlarmsHistory.aspx?lang=en&mode=1'
+const Last24HoursURL = process.env.URL;
 // Initial request
 
 let lastFetchedData = null;
